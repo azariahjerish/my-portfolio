@@ -12,6 +12,24 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
   plugins: ['~/plugins/lottie.js'],
+  app: {
+    baseURL: "/my-portfolio/", // Replace 'nuxt-portfolio' with your repo name
+  },
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
 })
 
 
+// export default defineNuxtConfig({
+//   app: {
+//     baseURL: "/nuxt-portfolio/", // Replace 'nuxt-portfolio' with your repo name
+//   },
+//   nitro: {
+//     prerender: {
+//       routes: ["/"],
+//     },
+//   },
+// });

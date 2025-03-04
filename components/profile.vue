@@ -81,13 +81,13 @@
 </template>
 
 <script>
-import lottieData from "../lottieFiles/Animation.json"; // Corrected asserts path
-import profileImage from "../asserts/images/jerish.jpg";
+import lottieData from "@/lottieFiles/Animation.json"; // Corrected asserts path
+import profileImage from "@/asserts/images/jerish.jpg";
 import skills from "./skills.vue";
 import experience from "./experience.vue";
 import education from "./education.vue";
 import contact from "./contact.vue";
-import resumeFile from "../asserts/azariah jerish.pdf";
+import resumeFile from "@/asserts/azariah jerish.pdf";
 import svgAnimation from "./svgAnimation.vue";
 export default {
   data() {

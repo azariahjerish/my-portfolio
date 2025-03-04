@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "nuxt generate && gh-pages -d .output/public"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
@@ -18,5 +19,8 @@
     "vue-router": "latest",
     "vue3-lottie": "^3.3.1",
     "vuetify": "^3.7.0-beta.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
