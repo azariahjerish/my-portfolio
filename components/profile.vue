@@ -61,12 +61,7 @@
 
     <v-row align="center" justify="center" class="">
       <v-col cols="12" md="5">
-        <Lottie
-          :animation-data="animationData"
-          :loop="true"
-          :autoplay="true"
-          class="lottiedisplay"
-        />
+        <div ref="lottieContainer" class="lottie-animation"></div>
       </v-col>
     </v-row>
 
@@ -79,32 +74,53 @@
     <contact />
   </div>
 </template>
-
-<script>
-import lottieData from "@/lottieFiles/Animation.json"; // Corrected asserts path
-import profileImage from "@/asserts/images/jerish.jpg";
+<script setup>
+import { ref, onMounted } from "vue";
+import lottie from "lottie-web";
 import skills from "./skills.vue";
 import experience from "./experience.vue";
 import education from "./education.vue";
 import contact from "./contact.vue";
-import resumeFile from "@/asserts/azariah jerish.pdf";
 import svgAnimation from "./svgAnimation.vue";
-export default {
-  data() {
-    return {
-      animationData: lottieData,
-      profileImage: profileImage,
-    };
-  },
-  components: { skills, experience, education, contact, svgAnimation },
-  methods: {
-    DownloadResume() {
-      const link = document.createElement("a");
-      link.href = resumeFile;
-      link.download = "azariahjerish.pdf";
-      link.click();
-    },
-  },
+
+// Profile Image & Resume File Paths
+const profileImage = "/asserts/jerish.jpg";
+const resumeFile = "/resume/azariah_jerish.pdf";
+
+// Reactive variables for Lottie animation
+const lottieContainer = ref(null);
+const animationData = ref(null);
+
+onMounted(async () => {
+  try {
+    const response = await fetch("/lottieFiles/Animation.json");
+    if (!response.ok) {
+      throw new Error("Failed to load animation file");
+    }
+    // Set the fetched JSON to the reactive variable
+    animationData.value = await response.json();
+
+    // Load the animation using the reactive value
+    lottie.loadAnimation({
+      container: lottieContainer.value, // Reference to the div
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: animationData.value,
+    });
+  } catch (error) {
+    console.error("Error loading Lottie animation:", error);
+  }
+});
+
+// Resume Download Function
+const DownloadResume = () => {
+  const link = document.createElement("a");
+  link.href = resumeFile;
+  link.download = "azariah_jerish.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 </script>
 

@@ -1,35 +1,9 @@
-// nuxt.config.ts
-
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  css: [
-    'vuetify/styles', 
-    '@mdi/font/css/materialdesignicons.css', // Material Design Icons
-    '@fortawesome/fontawesome-free/css/all.css' // FontAwesome CSS
-  ],
+  css: ["vuetify/styles/main.sass",
+  "@mdi/font/css/materialdesignicons.css"],
   build: {
-    transpile: ['vuetify'],
+  transpile: ["vuetify"]
   },
-  plugins: ['~/plugins/lottie.js'],
-  app: {
-    baseURL: "/my-portfolio/", // Replace 'nuxt-portfolio' with your repo name
-  },
-  nitro: {
-    prerender: {
-      routes: ["/"],
-    },
-  },
-})
-
-
-// export default defineNuxtConfig({
-//   app: {
-//     baseURL: "/nuxt-portfolio/", // Replace 'nuxt-portfolio' with your repo name
-//   },
-//   nitro: {
-//     prerender: {
-//       routes: ["/"],
-//     },
-//   },
-// });
+  })
