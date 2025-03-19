@@ -1,11 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     app: {
-    baseURL: '/my-portfolio/', // Replace with your GitHub repository name
+    baseURL: '/my-portfolio/', 
   },
   nitro: {
     prerender: {
-      routes: ['/'], // Ensures the homepage is generated
+      routes: ['/'],
     },
   },
   devtools: { enabled: true },
