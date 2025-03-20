@@ -82,7 +82,7 @@
 
 <script>
 // import lottieData from "/lottieFiles/Animation.json"; // Corrected images path
-import profileImage from "/images/jerish.jpg";
+import profileImage from "/my-portfolio/images/jerish.jpg";
 import skills from "./skills.vue";
 import experience from "./experience.vue";
 import education from "./education.vue";

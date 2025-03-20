@@ -20,7 +20,7 @@ const { smAndDown } = useDisplay(); // Directly reactive
 
 <style scoped>
 .background-img {
-  background-image: url("/images/main_bg.png") !important;
+  background-image: url("/my-portfolio/images/main_bg.png") !important;
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
