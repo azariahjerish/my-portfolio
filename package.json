@@ -1,5 +1,5 @@
 {
-  "homepage": "https://azariahjerish.github.io/my-portfolio",
+  "homepage": "https://github.com/azariahjerish/my-portfolio",
   "name": "nuxt-app",
   "private": true,
   "type": "module",
@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
-    "nuxt-3-vuetify": "^1.1.1",
-    "sass-embedded": "^1.86.0"
+    "nuxt-3-vuetify": "^1.1.1"
   }
 }
