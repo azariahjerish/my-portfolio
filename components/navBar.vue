@@ -64,7 +64,7 @@ const links = ref([
   { title: "Home", id: "home" },
   { title: "Skills", id: "skills" },
   { title: "Experience", id: "experience" },
-  { title: "Education", id: "education" },
+  // { title: "Education", id: "education" },
   { title: "Contact Me", id: "contact" },
 ]);
 

@@ -72,9 +72,11 @@
 
     <skills />
 
-    <experience />
+    <!-- <experience />
 
-    <education />
+    <education /> -->
+
+    <timeline />
 
     <contact />
   </div>
@@ -82,10 +84,11 @@
 
 <script>
 // import lottieData from "/lottieFiles/Animation.json"; // Corrected images path
-import profileImage from "/my-portfolio/images/jerish.jpg";
+import profileImage from "/images/jerish.jpg";
 import skills from "./skills.vue";
-import experience from "./experience.vue";
-import education from "./education.vue";
+// import experience from "./experience.vue";
+// import education from "./education.vue";
+import timeline from "./timeline.vue";
 import contact from "./contact.vue";
 import resumeFile from "/resume/azariah jerish.pdf";
 import svgAnimation from "./svgAnimation.vue";
@@ -96,7 +99,14 @@ export default {
       profileImage: profileImage,
     };
   },
-  components: { skills, experience, education, contact, svgAnimation },
+  components: {
+    skills,
+    // experience,
+    // education,
+    contact,
+    svgAnimation,
+    timeline,
+  },
   methods: {
     DownloadResume() {
       const link = document.createElement("a");
